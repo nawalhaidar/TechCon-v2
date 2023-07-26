@@ -1,0 +1,25 @@
+#navBar{
+    background-color: rgb(27, 27, 100);
+}
+#displayButton:hover{
+    cursor: pointer;
+}
+
+.carousel-item{
+    max-height: 500px;
+}
+
+#ui-datepicker-div{
+    z-index: 30000!important;
+} 
+
+button{
+    color:white!important;
+}
+.error{
+    bottom: 0!important;
+    right:0!important;
+    color:red!important;
+    display: block!important;
+    z-index: 100!important;
+}
