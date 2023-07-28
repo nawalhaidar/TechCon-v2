@@ -128,39 +128,49 @@ $('document').ready(function(){
         }
     });
 
-    // $('#displayButton').on('click',function(){
-    //     $('#myForm2 :input').val('');
-    //     $('#staticBackdrop2').modal('show');
+    $('#displayButton').on('click',function(){
+        $('#myForm2 :input').val('');
+        $('#staticBackdrop2').modal('show');
 
+        $.validator.addMethod('login',function(value, element){
+            let username= $('#username').val();
+            let password= $('#password').val();
+            return (username==='nawalhaidar' && password==='P@55W0RD');
+        },"Invalid username or password.")
 
-    //     $('#myForm2').validate({
-    //         rules:{
-    //             username: {
-    //                 required: true,
-                    
-    //             },
-    //             password: {
-    //                 required: true,
-                    
-    //             }
+        $('#myForm2').validate({
+            rules:{
+                username: {
+                    required: true,
+                    login: true
+                },
+                password: {
+                    required: true,
+                    login: true
+                }
     
-    //         },
-    //         messages: {
-    //             username: {
-    //               required: 'Please enter your username.',
+            },
+            messages: {
+                username: {
+                  required: 'Please enter your username.',
                 
-    //             },
-    //             password:{
-    //                 required: 'Please enter your password.',
+                },
+                password:{
+                    required: 'Please enter your password.',
             
-    //             }
-    //         },
-    //         submitHandler: function(){
-    //             alert("logged in")
-    //         }
-    //     })
+                }
+            },
+            // errorPLacement: function(error, element){
+            //     if(error.val()==="Invalid username or password."){
+            //         $('#loginRow').after(error);
+            //     }
+            // },
+            submitHandler: function(){
+                alert("logged in")
+            }
+        })
         
-    //})
+    })
 
 })
 
