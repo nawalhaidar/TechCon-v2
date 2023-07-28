@@ -18,6 +18,28 @@ $('document').ready(function(){
         defaultDate: '-20y',
     });
 
+    $('#discoverRow').on('click',function(){
+        $('#hiddenSpeakers').slideDown(function(){
+            $('#hiddenSpeakers').css('display','flex');
+        });
+        $('#discoverRow').hide(function() {
+            $(this).removeClass('d-flex');
+        });
+        $('#showLess').removeClass('d-none');
+        $('#showLess').addClass('d-flex');
+    })
+
+    $('#showLess').on('click',function(){
+        $('#hiddenSpeakers').slideUp(function(){
+            $('#hiddenSpeakers').css('display','none');
+        });
+        $('#discoverRow').show(function() {
+            $(this).addClass('d-flex');
+          });
+        $('#showLess').removeClass('d-flex');
+        $('#showLess').addClass('d-none');
+    })
+
     let nameRules={
         required: true,
             minlength: 2,
@@ -106,37 +128,37 @@ $('document').ready(function(){
         }
     });
 
-    $('#displayButton').on('click',function(){
-        $('#myForm2 :input').val('');
-        $('#staticBackdrop2').modal('show');
+    // $('#displayButton').on('click',function(){
+    //     $('#myForm2 :input').val('');
+    //     $('#staticBackdrop2').modal('show');
 
 
-        $('#myForm2').validate({
-            rules:{
-                username: {
-                    required: true,
-                    equalTo: "nawalhaidar"
-                },
-                password: {
-                    required: true,
-                    equalTo: "P@55W0RD"
-                }
+    //     $('#myForm2').validate({
+    //         rules:{
+    //             username: {
+    //                 required: true,
+                    
+    //             },
+    //             password: {
+    //                 required: true,
+                    
+    //             }
     
-            },
-            messages: {
-                username: {
-                  required: 'Please enter your username.',
-                  equalTo: 'invalid'
-                },
-                password:{
-                    required: 'Please enter your password.',
-                    equalTo: 'wrong'
-                }
-            },
-            submitHandler: function(){
-                alert("logged in")
-            }
-        })
+    //         },
+    //         messages: {
+    //             username: {
+    //               required: 'Please enter your username.',
+                
+    //             },
+    //             password:{
+    //                 required: 'Please enter your password.',
+            
+    //             }
+    //         },
+    //         submitHandler: function(){
+    //             alert("logged in")
+    //         }
+    //     })
         
     })
 
