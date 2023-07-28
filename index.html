@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
     <link rel="stylesheet" href="jquery-ui/jquery-ui.structure.css">
     <link rel="stylesheet" href="jquery-ui/jquery-ui.theme.css">
     <link rel="stylesheet" href="jquery-ui/jquery-ui-custom.css">
     <link rel="stylesheet" href="jquery-ui/jquery-ui-custom.structure.css">
-    <link rel="stylesheet" href="jquery-ui/jquery-ui-custom.theme.css">
-    <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui-custom.theme.css"> -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    
+    <!-- <link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   
     <link rel="stylesheet" href="index.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Document</title>
 </head>
+
 <body>
   <header class="header">
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navBar">
@@ -45,7 +51,9 @@
     </nav>
   </header>
   <main>
-    <div id="carouselExampleCaptions" class="carousel slide bg-primary">
+
+    <!-- Carousel section starts -->
+    <div id="carouselExampleCaptions" class="carousel slide bg-primary" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -83,13 +91,16 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    <!-- carousel section ends -->
+
+    <!-- Speaker section starts -->
     <div class="container" id="speakers">
       <div class="row" >
         <div class="col">
           <p class="h3 text-center mt-5 mb-5 fw-bold"> Meet the Speakers</p>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
         <div class="col">
           <div class="card h-100 border-2 border-warning-subtle">
             <img src="speaker-1.jpg" class="card-img-top" alt="...">
@@ -130,6 +141,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4" id="hiddenSpeakers" style="display:none">
         <div class="col">
           <div class="card h-100 border-2 border-warning-subtle">
             <img src="speaker-5.jpg" class="card-img-top" alt="...">
@@ -171,12 +184,28 @@
           </div>
         </div>
       </div>
-      <!-- </div>  -->
+
+      <div class="row w-100 text-center d-flex align-items-center m-0 mb-4" id="discoverRow">
+        <div class="col btn btn-warning text-light">
+          <p class="h5">Discover More >>></p>
+        </div>
+      </div>
+      <div class="row w-100 text-center d-none align-items-center m-0 mb-4" id="showLess">
+        <div class="col text-warning ">
+          <p class="h6" id="showLess">Show Less</p>
+        </div>
+      </div>
+
     </div>
+    </div>
+    <!-- Speaker section ends -->
+
+
+    <!-- Registration section starts -->
     <form class="container " id="myForm">
       <div class="row">
         <div class="col">
-          <p class="h3 text-center mt-5 mb-5 fw-bold"> Register Now</p>
+          <p class="h3 text-center mb-5 fw-bold"> Register Now</p>
         </div>
       </div>
       <!-- Form starts here -->
@@ -257,7 +286,9 @@
         </div>
       </div>
     </div>
+    <!-- Registration section ends -->
 
+    <!-- Registration Modal starts -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -276,6 +307,9 @@
         </div>
       </div>
     </div>
+    <!-- Registration Modal ends -->
+
+    <!-- Log in Modal starts -->
     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -284,33 +318,44 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form class="container" id="myForm2">
-          <div class="modal-body">
-              <div class="row">
-                <div class="col-md-6 mb-3 ">
-                  <label for="username" > Username</label>
-                  <input type="name" class="form-control" id="username" placeholder="" name="username" required>
-                </div>
-                <div class="col-md-6 mb-3 ">
-                  <label for="password" >Password</label>
-                  <input type="name" class="form-control" id="password" placeholder="" name="password" required>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3 ">
+                    <label for="username" > Username</label>
+                    <input type="name" class="form-control" id="username" placeholder="" name="username" required>
+                  </div>
+                  <div class="col-md-6 mb-3 ">
+                    <label for="password" >Password</label>
+                    <input type="name" class="form-control" id="password" placeholder="" name="password" required>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-warning" id="logIn">Log in</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-warning" id="logIn">Log in</button>
+              </div>
           </form> 
         </div>
     </div>
+    <!-- Log in Modal ends -->
   </main>
 
 
-  <script src="jQuery/jQuery.js"></script>
-<script src="jquery-ui/jquery-ui.js"></script>
-<script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
-<script src="bootstrap-5.3.0-dist/js/bootstrap.js"></script>
+<!-- <script src="jQuery/jQuery.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<!-- <script src="jquery-ui/jquery-ui.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script> -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+
+
+<!-- <script src="bootstrap-5.3.0-dist/js/bootstrap.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 <script src="index.js"></script>
+
 </body>
 
 </html>
